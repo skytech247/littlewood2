@@ -1,0 +1,223 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    max-width: 600px; /* Desktop style width */
+    width: 100%; /* Ensure it scales for mobile */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: purple;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Dashboard Area */
+.dashboard {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Section */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.balance {
+    font-size: 16px;
+    color: #ff6b6b;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap; /* Keep items inline like desktop */
+    margin-top: 20px;
+}
+
+.stat-item {
+    flex: 1; /* Equal spacing for all items */
+    text-align: center;
+    min-width: 120px; /* Prevent shrinking */
+    
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #292929;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress {
+    background-color: #00b894;
+    height: 100%;
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: nowrap; /* Force items inline */
+}
+
+.action-button {
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center;
+    flex: 1;
+    min-width: 100px; /* Prevent shrinking */
+    max-width: 150px; /* Maintain desktop-like width */
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button i {
+    font-size: 16px;
+}
+
+.action-button:hover {
+    background-color: #444;
+}
+
+/* Other Actions Section */
+.other-actions {
+    margin: 20px 0;
+}
+
+.other-actions p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.setting-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Full width on mobile */
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.setting-button i {
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+.setting-button:hover {
+    background-color: #444;
+}
+
+/* Footer Section */
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Keep inline */
+}
+
+.footer-button {
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Equal spacing */
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    max-width: 120px; /* Desktop-like size */
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.footer-button i {
+    font-size: 16px;
+}
+
+.footer-button:hover {
+    background-color: #444;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .stats,
+    .actions,
+    .footer-menu {
+        flex-wrap: wrap; /* Wrap elements */
+        gap: 15px; /* Add spacing */
+    }
+
+    .stat-item,
+    .action-button,
+    .footer-button {
+        flex: 1 1 45%; /* Take 45% width on smaller screens */
+        max-width: 100%;
+    }
+
+    .action-button {
+        text-align: center;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    .stat-item {
+       font-size: 0.9rem ;
+    }
+}

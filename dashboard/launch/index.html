@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="header-image.png" alt="Header" class="header-image">
+        </header>
+
+        <main class="dashboard">
+            <div class="profile">
+                <div class="stats">
+                    <div class="stat-item">
+                        <p>Today Earning</p>
+                        <p class="stat-value">93.59</p>
+                    </div>
+                    <div class="stat-item">
+                        <p>Total Balance</p>
+                        <p class="stat-value">103.59</p>
+                    </div>
+                    <div class="stat-item">
+                        <p>In Process Amount</p>
+                        <p class="stat-value">0.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="action-button" id="launch">Launch (38/38)</button>
+                <button class="action-button" id="apps-history">Apps History</button>
+            </div>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span id="modal-close-icon" class="close-icon">&times;</span> <!-- X button -->
+                    <img src="product-image.png" alt="Active Core Cropped Tights">
+                    <h2>Active Core Cropped Tights</h2>
+                    <div class="details">
+                        <p>Price: 22.49 x2</p>
+                        <p>Earnings: 0.45</p>
+                        <textarea placeholder="Comments: The product is very good."></textarea>
+                        <button id="confirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-menu">
+                <button class="footer-button" id="home"><i class="fas fa-home"></i> Home</button>
+                <button class="footer-button" id="launch-footer"><i class="fas fa-rocket"></i> Launch</button>
+                <button class="footer-button" id="my"><i class="fas fa-user"></i> My</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

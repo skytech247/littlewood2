@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Littlewoods Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">Littlewoods</h1>
+        </header>
+        <main class="dashboard">
+            <div class="profile">
+                <div class="profile-info">
+                    <img class="avatar" src="avatar.png" alt="Profile Image">
+                    <div class="profile-details">
+                        <p class="username">8998366165</p>
+                        <p class="credit-score">Credit Score: <span>100</span></p>
+                        <p class="referral-code">Referral Code: <span>7100740</span></p>
+                    </div>
+                </div>
+                <div class="balances">
+                    <p>Total Earning: <span class="earning">94.41</span></p>
+                    <p>Total Balance: <span class="balance">-370.34</span></p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="action-button" id="wallet"><i class="fas fa-wallet"></i> Wallet</button>
+                <button class="action-button" id="vip-details"><i class="fas fa-crown"></i> VIP Details</button>
+                <button class="action-button" id="service"><i class="fas fa-headset"></i> Service</button>
+            </div>
+
+            <div class="settings">
+                <p><i class="fas fa-image"></i> Profile Image</p>
+                <p><i class="fas fa-user"></i> Username</p>
+                <p><i class="fas fa-venus-mars"></i> Gender: <span>Unset</span></p>
+                <button class="setting-button"><i class="fas fa-key"></i> Change Login Password</button>
+                <button class="setting-button"><i class="fas fa-lock"></i> Change Security Password</button>
+            </div>
+        </main>
+        <footer>
+            <button class="signout"><i class="fas fa-sign-out-alt"></i> SIGN OUT</button>
+            <div class="footer-menu">
+                <a href="./index.html" target="_blank"><button class="footer-button" id="home"><i class="fas fa-home"></i> Home</button></a>
+                <a href="./launch/index.html" target="_blank"><button class="footer-button" id="launch"><i class="fas fa-rocket"></i> Launch</button></a>
+                <a href="./profile/index.html" target="_blank"><button class="footer-button" id="my"><i class="fas fa-user"></i> My</button></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
