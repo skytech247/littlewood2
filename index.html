@@ -32,8 +32,20 @@
         header h1 {
             color: #a259ff;
             margin: 0;
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: bold;
+        }
+
+        .dot{
+            
+            font-size: 4rem;
+           color: orange;
+            margin: 0px;
+        }
+
+        .dot-three{
+            font-size: 2rem;
+            
         }
 
         .menu-toggle {
@@ -139,10 +151,6 @@
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             animation: fadeIn 2s;
-        }
-
-        a{
-            text-decoration:none;
         }
 
         .content {
@@ -306,7 +314,7 @@
 </head>
 <body>
     <header>
-        <h1>Platform Name</h1>
+        <h1><span class="dot-three">Three</span><i>dots</i> <span class="dot">...</span></h1>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
