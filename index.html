@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Name - Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1e1e1e 25%, #121212 25%, #121212 50%, #1e1e1e 50%, #1e1e1e 75%, #121212 75%, #121212 100%);
+            background-size: 50px 50px;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideInDown 1s;
+        }
+
+        header h1 {
+            color: #a259ff;
+            margin: 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #a259ff;
+            left: 0;
+            bottom: -5px;
+            transition: 0.4s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 1rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/featured/?technology,futuristic');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 2s;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            margin-right: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            color: #a259ff;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            animation: zoomIn 1.5s;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 2s;
+        }
+
+        .hero-content button {
+            background: linear-gradient(90deg, #00c853, #a259ff);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .hero-content button:hover {
+            transform: scale(1.1);
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+            
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s;
+        }
+
+        .content {
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            animation: fadeIn 2.5s;
+        }
+
+        .content-section {
+            background: linear-gradient(145deg, #1e1e1e, #292929);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .content-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .content-section h3 {
+            color: #a259ff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .content-section h3::before {
+            content: url('https://img.icons8.com/ios-filled/30/a259ff/checkmark.png');
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .parallax {
+            height: 20px;
+            background-image: url('https://source.unsplash.com/featured/?business,income');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #1f1f1f;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1.5s;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1f1f1f;
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin-right: 0;
+            }
+
+            .hero-image {
+                margin-top: 2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Platform Name</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+            <a href="#">Terms & Conditions</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Platform Name</h2>
+            <p>Earn rewards for your time, effort, and consistency. Join our platform to complete tasks, unlock rewards, and build a sustainable income.</p>
+            <button>Join Us Today</button>
+        </div>
+        <div class="hero-image">
+            <img src="./images/hero-image.png" alt="Welcome Image">
+        </div>
+    </div>
+
+    <div class="parallax"></div>
+
+    <div class="content">
+        <div class="content-section">
+            <h3>How It Works</h3>
+            <p>Register on the platform, complete 20 tasks daily, and earn 500 Naira per task. Withdraw your earnings when your wallet balance reaches 1,000 Naira. Enhance your rewards with Paid Tasks and subscription bonuses!</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Referral Program</h3>
+            <p>Invite friends and earn 4,000 Naira for every referral who completes daily tasks. Build your income by growing the community!</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Subscription Packages</h3>
+            <p>Choose from a variety of subscription packages to unlock Paid Tasks and maximize your rewards. Higher tiers come with greater bonuses, ensuring higher payouts for your efforts!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Platform Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
